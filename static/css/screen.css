@@ -1,0 +1,239 @@
+/*  
+	Panorama v1.0
+	 http://nlsmith.com/
+
+	This theme was designed and built by Nathan Smith,
+	whose site you will find at http://nlsmith.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+
+body {
+	text-align: center;
+	font-family: "Gill Sans MT", "Gill Sans", Verdana, sans-serif;
+	margin: 0;
+	background: #E5DDD3;
+}
+
+a {
+	color: #0005DA;
+}
+
+a:hover {
+	color: #fff;
+	background: #000;
+}
+
+img {
+	float: right;
+	margin: 0.25em;
+}
+
+#sidebar {
+	float: right;
+	margin-top: 5em;
+}
+
+#sidebar ul {
+	list-style-type: none;
+}
+	
+.container, #content {
+	width: 33em;
+	text-align: left;
+	margin: 0 auto;
+	margin-top: 2em;
+	line-height: 140%;
+}
+
+/**** HEADERS ****/
+h1 {
+	 text-indent: -9999px; 
+	display: none;
+}
+
+h2 {
+	font-size: 4em;
+	color: #D6CFC4;
+	position: relative;
+	top: 2px;
+	left: 0em; 
+	margin: -0em;
+	margin-top: -0.35em;
+	margin-bottom: 0.35em;
+	white-space: nowrap;
+	z-index: 0;
+}
+
+h2, h3, h4, h5, h6, .menu, .more {
+	font-weight: normal;
+}
+
+h3, h4 {
+	border-bottom: 1px solid;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+
+#header {
+	background: url('../images/header-background.jpg');
+	background-repeat: no-repeat;
+	background-color: #7089B2;
+	height: 72px;
+	border-bottom: 3px solid black;
+}
+
+/**** MENUS ****/
+.menu {
+	word-spacing: 1em;
+}
+
+.menu ul {
+	list-style-type: none;
+	display: inline;
+	text-align: center;
+}
+
+.menu ul li {
+	display: inline; 
+}
+
+#topMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: left;
+	width: 100%;
+	background: black;
+	color: white;
+	margin: 0;
+}
+
+#topMenu a {
+	color: white;
+	text-decoration: none;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+#topMenu a:hover {
+	color: black;
+	background: #7DB2DC;
+}
+
+#topMenu .active {
+	background: #7DB2DC;
+	color: black;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+#bottomMenu {
+	text-align: center;
+	font-size: 80%;
+	border-top: 1px solid;
+}
+
+/**** DOWNLOAD/MORE BOX STYLES ****/
+.project_date {
+	text-align: right;
+	margin-top: -1.5em;
+}
+.more {
+	display: block;
+	padding-bottom: 2em;
+	margin-bottom: 4em;
+}
+
+.more ul {
+	padding-top: 1em;
+	list-style-type: none;
+}
+
+.more img {
+	float: left;
+	border: none;
+	border-right: 1px solid;
+	padding-right: 0.25em;
+}
+
+.download-icon {
+	border: none;
+	display: block;
+}
+
+#links li {
+	margin-bottom: 1em;
+}
+
+#copyright {
+	color: #D6CFC4;
+	text-align: right;	
+	margin: 0.5em;
+}
+
+	
+.center {
+  text-align: center;
+}
+
+a img {
+  border: none;
+}
+
+img.softpedia {
+  float: none;
+}
+
+.downloadBox {
+  background-color: #E5DDD3;
+  width: 150px;
+  float: right;
+  margin-top: 1em;
+  padding: 0em 0em 1em 1em;
+}
+
+.downloadBox ul { padding-left: 5px; line-height: 32px; }
+
+/* =CONTACT FORM */
+#contact {
+  position: static;
+  overflow: hidden;
+}
+
+#errors {
+  font-style: italic;
+}
+
+.contactleft {
+  width: 25%;
+  text-align: right;
+  clear: both;
+  float: left;
+  display: inline;
+  padding: 4px;
+  margin: 5px 0;
+}
+
+.contactright {
+  width: 70%;
+  text-align: left;
+  float: right;
+  display: inline;
+  padding: 4px;
+  margin: 5px 0;
+}
+
+.contacterror {
+  border: 1px solid #ff0000;
+}

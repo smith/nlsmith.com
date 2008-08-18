@@ -1,0 +1,10 @@
+{
+  "name" : "nlsmith.com",
+  "title" : "NL Smith",
+  "stylesheets" : [
+    {
+      "href" : "/static/css/screen.css",
+      "media" : "screen"
+    }
+  ]
+}

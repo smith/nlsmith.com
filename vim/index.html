@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>NL Smith's Vim Page</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="main">
+  <h1>NL Smith's Vim Page</h1>
+  <p><em>From <a href="http://www.vim.org">vim.org</a>:</em></p>
+  <p>Vim is a highly configurable text editor built to enable efficient text 
+  editing. It is an improved version of the vi editor distributed with most UNIX  systems.</p>
+  <p>Vim is often called a &#8220;programmer's editor,&#8221; and so useful 
+  for programming that many consider it an entire Integrated Development 
+  Environment. It's not just for programmers, though. Vim is perfect for all 
+  kinds of text editing, from composing email to editing configuration files. 
+  </p>
+  <h2>Downloads</h2>
+  <ul>
+    <li><a href=
+      "http://macvim.org/OSX/files/binaries/OSX10.4/vim7.0.224.tar.bz2">Mac
+    </a></li>
+    <li><a href="ftp://ftp.vim.org/pub/vim/pc/gvim71.exe">Windows</a></li>
+  </ul>
+  <h2>Configuration Files</h2>
+  <p>The config file I use is based on <a href="http://www.iunknown.com/">John
+    Lam</a>'s .vimrc file I found somewhere. It has options specific for 
+  <a href="http://www.ruby-lang.org/en/">Ruby</a>, but is great for anything.
+  The color scheme is based on the 
+  <a href="http://alternateidea.com/blog/articles/2006/01/03/textmate-vibrant-ink-theme-and-prototype-bundle">
+    Vibrant Ink</a> theme for <a href="http://macromates.com">TextMate</a>.</p>
+	<ul>
+    <li>
+      <ul>
+        <li>Mac: <a href="vimrc.mac">.vimrc</a></li>
+        <li>For the GUI version. Place at <tt>~/.vimrc</tt>.</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>Unix: <a href="vimrc.unix">.vimrc</a></li>
+        <li>For the console version. Place at <tt>~/.vimrc</tt>.</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>Windows: <a href="vimrc.windows">_vimrc</a></li>
+        <li>For the GUI version. Place at <tt>C:\Program Files\Vim\_vimrc</tt>.
+        </li>
+      </ul>
+    </li>
+	</ul>
+  <h2>Add Ons</h2>
+  <ul>
+    <li><a href="http://www.vim.org/scripts/script.php?script_id=1658">The NERD
+      Tree</a>: A tree explorer plugin for navigating the filesystem. 
+    [<a href="http://www.vim.org/scripts/download_script.php?src_id=7554">Download</a>]</li>
+      
+    <li>
+    <a href="http://www.vimoutliner.org/index.php?module=htmlpages&amp;func=display&amp;pid=1">VimOutliner</a>: 
+    [<a href="http://www.vimoutliner.org/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=getit&amp;lid=25">Download</a>]
+    </li>
+  </ul>
+  <h2>Help</h2>
+  <ul>
+    <li><a href="http://tldp.org/LDP/gs/node5.html#SECTION005130000000000000000">Using the <tt>vi</tt> editor</a></li> from 
+    <a href="http://tldp.org/LDP/gs/">Linux Installation and Getting Started</a>
+    (where I first learned vi.)</li>
+    <li><a href="http://www.viemu.com/a-why-vi-vim.html">
+      Why, oh WHY, do those #?@! nutheads use vi?</a>
+    </li>
+    <li>
+    <a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html">
+      Graphical vi-vim Cheat Sheet and Tutorial</a>
+    </li>
+    <li>
+    <a href="vim_cheat_sheet_and_tutorial.pdf">
+      The complete Graphical vi-vim Cheat Sheet and Tutorial in PDF format</a>
+    </li>
+    <li>
+    <a href="http://blogs.sun.com/marigan/entry/how_the_vi_editor_would">
+      vi Assistant</a>
+    </li>
+  </ul>
+  <h2>Enhanced JavaScript Indentation</h2>
+  <p>Vim's default indentation settings treat the JavaScript syntax like C, which can be a pain if you're trying to type JSON or object literals. Put this in the <tt>indent</tt> folder of your Vim installation for friendly behavior:</p>
+  <ul>
+    <li><a href="http://www.vim.org/scripts/download_script.php?src_id=7860">Indentation for JavaScript</a></li>
+  </ul>
+  <h2>js.asp Syntax Highlighting</h2>
+  <p>I like to name my ASP JScript files with a '.js.asp' extension, but Vim doesn't treat them like Javascripts after that. To get the javascript syntax highligting to work change your filetype.vim like this:</p>
+  <pre>
+" Active Server Pages (with Perl or Visual Basic Script [or Javascript
+" {js.asp}])
+au BufNewFile,BufRead *.asp
+  \ if exists("g:filetype_asp") |
+  \   exe "setf " . g:filetype_asp |
+  \ elseif getline(1) . getline(2) . getline(3) =~? "perlscript" |
+  \   setf aspperl |
+  \ elseif getline(1) =~? "\<%.*%\>" |
+  \   setf aspvbs |
+  \ else |
+  \   setf javascript |
+  \ endif
+</pre>
+</div>
+<a id="home" href="/">nlsmith.com</a>
+</body>
+</html>
+

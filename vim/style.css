@@ -1,0 +1,44 @@
+* { font-size: 100%; }
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: consolas, Monaco, "Lucida Console", "Courier New";
+  font-weight: bold;
+  margin: 1em;
+  text-align: center;
+}
+
+#main {
+  margin: 0 auto;
+  text-align: left;
+  width: 40em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FF6600;
+}
+
+a {
+  color: #80A0FF;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+tt {
+  background-color: #808080;
+}
+
+a#home {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
