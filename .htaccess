@@ -3,6 +3,7 @@ Redirect 301 /~amie http://cdbaby.com/cd/sassano
 Redirect 301 /CollegeFootball.wdgt.zip /downloads/CollegeFootball.wdgt.zip
 Redirect 301 /gottung http://gottung.net/
 Redirect 301 /collegefootball.php /projects/college-football/
+Redirect 301 /collegefootball /projects/college-football/
 Redirect 301 /files http://files.nlsmith.com/
 Redirect 301 /contact.php /contact/
 
