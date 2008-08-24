@@ -1,0 +1,7 @@
+# These are the modules added to the default Apache install. Add them with 
+# a2enmod *mod_name*
+deflate
+expires
+proxy
+rewrite
+ssl
