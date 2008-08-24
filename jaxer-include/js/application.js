@@ -12,6 +12,7 @@ Jaxer.response.setClientFramework();
       (Jaxer.request.documentRoot || "/var/www/nlsmith.com/");
     var privateLibDir = documentRoot + "jaxer-include/js/";
     var path = Jaxer.request.current.path || ""; // Current path
+    var app, page; // Application objects
 
     // Load external libraries or abort
     try {
@@ -22,12 +23,18 @@ Jaxer.response.setClientFramework();
       return; 
     }
 
-    // This is a flat JSON file which is a placeholder for the site object db
-    var site = (Jaxer.File.read(documentRoot + 
-        "jaxer-include/json/site.json") || "").evalJSON() || {};
+    // /jaxer-include/config/application.js contains the basic configuration
+    // for the site. Declare the local variable 'app' and assign it to the
+    // Jaxer.application object. Extend with the application configuration
+    app = Jaxer.application;
+    if (Object.keys(app).length === 0) {
+        Object.extend(app, ((Jaxer.File.read(documentRoot + 
+            "jaxer-include/config/application.json") || "").evalJSON() || {})
+        );
+    }
 
     // Get the page object based on the path
-    var page = ((site.pages || []).find(function (p) {
+    page = ((app.pages || []).find(function (p) {
         return p.path === path;
     })) || {};
 
@@ -36,7 +43,7 @@ Jaxer.response.setClientFramework();
      */
     (function insertStylesheets() {
         // Sheets for all pages and this page
-        (site.stylesheets || []).concat(page.stylesheets || []).each(
+        (app.stylesheets || []).concat(page.stylesheets || []).each(
             function (sheet) {
                 sheet.rel = sheet.rel || "stylesheet";
                 $$("head")[0].insert(new Element("link", sheet));
@@ -51,13 +58,13 @@ Jaxer.response.setClientFramework();
         var body;
         var content;
         var layout = {
-            root : documentRoot + "jaxer-include/html",
-            name : page.layout || site.layout || "site"
+            root : documentRoot + "jaxer-include/html/layouts",
+            name : page.layout || app.layout || "application"
         }
 
         try {
           layout.template = Jaxer.File.read(
-              "#{root}/#{name}.layout.html".interpolate(layout)
+              "#{root}/#{name}.html".interpolate(layout)
           );
         } catch (e)  { 
           Jaxer.Log.warn("Could not apply layout '" + layout.name + "'");
@@ -75,9 +82,9 @@ Jaxer.response.setClientFramework();
     /**
      * Set the page title
      */
-    // TODO: Use site.map to populate all title parts
+    // TODO: Use app.map to populate all title parts
     (function setTitle() {
-        var parts = [site.title || null];
+        var parts = [app.title || null];
         var separator = " &raquo; ";
         var title = $$('title')[0] || new Element('title');
         var text = parts.join(separator);
