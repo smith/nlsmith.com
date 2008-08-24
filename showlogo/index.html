@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>showlogo</title>
+<style type="text/css">
+  body {
+    background-color: #000000;
+  }
+  #main {
+    border: 15px solid #ffffff;
+    width: 50px;
+  }
+  #logo {
+    width : 50px;
+    height: 50px;
+  }
+</style>
+</head>
+<body>
+  <div id="main"><div id="logo"></div>
+</div>
+<script src="prototype.js"></script>
+<script src="swfobject.js"></script>
+<script>
+//var FO = {movie: "http://espn-ak.starwave.com/swf/clubhouse/ncaa/<? echo $id; ?>.swf", build: "0", majorversion: "6", height: "50", width: "50", wmode: "transparent"}
+//UFO.create(FO, "main");
+document.observe("dom:loaded", function () {
+  var id = window.location.search.toQueryParams().id || 0;
+  var url = "http://espn-ak.starwave.com/swf/clubhouse/ncaa/";
+  swfobject.embedSWF(url + id + '.swf', 'logo', '50', '50', '6.0.0', 
+    'expressInstall.swf', {}, { 'wmode' : 'transparent'});
+});
+</script>
+</body>
+</html>
