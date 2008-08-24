@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /jaxer-include/
+Disallow: /showlogo/
