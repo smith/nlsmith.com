@@ -12,7 +12,7 @@ Jaxer.response.setClientFramework();
       (Jaxer.request.documentRoot || "/var/www/nlsmith.com/");
     var privateLibDir = documentRoot + "jaxer-include/js/";
     var path = Jaxer.request.current.path || ""; // Current path
-    var app, page; // Application objects
+    var app, page, head; // Application objects
 
     // Load external libraries or abort
     try {
@@ -26,6 +26,7 @@ Jaxer.response.setClientFramework();
     // /jaxer-include/config/application.js contains the basic configuration
     // for the site. Declare the local variable 'app' and assign it to the
     // Jaxer.application object. Extend with the application configuration
+    // TODO: Reload based on modified time
     app = Jaxer.application;
     if (Object.keys(app).length === 0) {
         Object.extend(app, ((Jaxer.File.read(documentRoot + 
@@ -34,9 +35,13 @@ Jaxer.response.setClientFramework();
     }
 
     // Get the page object based on the path
-    page = ((app.pages || []).find(function (p) {
-        return p.path === path;
-    })) || {};
+    // TODO: Work on mapping
+    //page = ((app.pages || []).find(function (p) {
+        //return p.path === path;
+    //})) || {};
+    page = {};
+
+    head = $$('head')[0] || {}; // Document head
 
     /**
      * Put stylesheets in the document head
@@ -46,7 +51,7 @@ Jaxer.response.setClientFramework();
         (app.stylesheets || []).concat(page.stylesheets || []).each(
             function (sheet) {
                 sheet.rel = sheet.rel || "stylesheet";
-                $$("head")[0].insert(new Element("link", sheet));
+                head.insert(new Element("link", sheet));
             }
         ); 
     })();
@@ -87,10 +92,21 @@ Jaxer.response.setClientFramework();
         var parts = [app.title || null];
         var separator = " &raquo; ";
         var title = $$('title')[0] || new Element('title');
-        var text = parts.join(separator);
+        var text = "";
+
+        // Use the first 'h2' tag as the second part
+        parts.push(($$('h2')[0] || {}).innerHTML);
+        
+        // Use the first 'h3' tag as the third part, except on the projects page
+        if (path !== "/projects") {
+            parts.push(($$('h3')[0] || {}).innerHTML);
+        }
+
+        // Combine non-empty parts
+        text = parts.compact().join(separator);
 
         if ($$('title').length === 0) { 
-            $$('head')[0].insert(title);
+            head.insert(title);
         }
         title.update(text); 
     })();
@@ -156,7 +172,7 @@ Jaxer.response.setClientFramework();
        */
       // TODO: RSS for all pages
       (function addRSS() {
-        $$('head')[0].insert(new Element('link', {
+        head.insert(new Element('link', {
           rel : "alternate",
           type : "application/rss+xml",
           href : "http://feeds.delicious.com/rss/nlsmith",
