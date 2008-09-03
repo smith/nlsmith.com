@@ -44,6 +44,17 @@ Jaxer.response.setClientFramework();
     head = $$('head')[0] || {}; // Document head
 
     /**
+     * Put meta tags in the document head
+     */
+    // TODO: Just doing encoding now, make this more general
+    (function insertMeta() {
+        head.insert(new Element("meta", {
+            "http-equiv" : "Content-Type",
+            "content" : "text/html; charset=utf-8"
+        }));
+    })();
+
+    /**
      * Put stylesheets in the document head
      */
     (function insertStylesheets() {
