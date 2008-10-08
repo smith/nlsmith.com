@@ -125,7 +125,7 @@ Jaxer.response.setClientFramework();
     // Stuff below here is page specific and probably should be handled 
     // somewhere else
 
-    if (path === "/contact" && Jaxer.request.method === "POST") {
+    if (path === "/contact/" && Jaxer.request.method === "POST") {
         /** 
          * Handle submission of the contact form 
          */
@@ -177,7 +177,7 @@ Jaxer.response.setClientFramework();
     }
 
     // Links page
-    if (path === "/links") {
+    if (path === "/links/") {
       /**
        * Insert link to del.icio.us RSS feed
        */
