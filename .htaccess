@@ -7,8 +7,6 @@ Redirect 301 /collegefootball /projects/college-football
 Redirect 301 /files http://files.nlsmith.com/
 Redirect 301 /contact.php /contact/
 
-Redirect 307 /downloads/iowastorm.zip /iowastorm.html
-
 # Index goes to /projects/index
 Redirect 301 /index.html /projects/
 
