@@ -9,5 +9,6 @@ Redirect 301 /contact.php /contact/
 
 # Index goes to /projects/index
 Redirect 301 /index.html /projects/
+Redirect 301 /index.php /projects/
 Redirect 301 /blog /projects/
 
