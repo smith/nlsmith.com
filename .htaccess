@@ -11,4 +11,5 @@ Redirect 301 /contact.php /contact/
 Redirect 301 /index.html /projects/
 Redirect 301 /index.php /projects/
 Redirect 301 /blog /projects/
+Redirect 301 /old /projects/
 
