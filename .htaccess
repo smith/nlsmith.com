@@ -6,6 +6,7 @@ Redirect 301 /collegefootball.php /projects/college-football/
 Redirect 301 /collegefootball /projects/college-football
 Redirect 301 /files http://files.nlsmith.com/
 Redirect 301 /contact.php /contact/
+Redirect 301 /console /projects/console
 
 # Index goes to /projects/index
 Redirect 301 /index.html /projects/
