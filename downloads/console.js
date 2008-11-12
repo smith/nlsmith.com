@@ -1,9 +1,18 @@
 /**
  * @fileOverview A server-side implementation of the Firebug Console API
  * @author Nathan L Smith
- * @date November 8, 2008
- * @version 0.0.1
+ * @date November 12, 2008
+ * @version 0.0.2
  */
+// FIXME: Jaxer has a seemingly low limit for length of headers. ASP also has a
+// limit, but it is more reasonable. It is difficult to determine what these
+// limits are, since they are based on the number and length of the headers 
+// sent, and headers not sent by this script.
+//
+// In short, logging too many messages on one request will cause the server to 
+// not give a response at all.
+
+/*global console, Jaxer, Request, Response, Application, Session */
 
 if (typeof console === "undefined") {
     /**
@@ -12,7 +21,7 @@ if (typeof console === "undefined") {
      * This is a partial implementation of the Firebug Console API using 
      * the Wildfire/FirePHP protocol. 
      *
-     * @see http://nlsmith.com/console/
+     * @see http://nlsmith.com/projects/console/
      * @see http://getfirebug.com/console.html
      * @see http://www.firephp.org/HQ/Use.htm
      */
@@ -49,33 +58,59 @@ if (typeof console === "undefined") {
          * The platforms object defines objects for the server-side JavaScript 
          * platform on which the console object is used
          */
-        // TODO: Test on other platforms. There may be a problem defining 
-        // platform specific stuff if the objects are not defined, but we're
-        // shooting for Jaxer only right now so it's cool
-        var platforms = {
-            jaxer : {
-                addHeader : function (header, value) { 
-                    Jaxer.response.headers[header] = value;
-                },
-                userAgent : Jaxer.request.headers["User-Agent"],
-                toJSON : Jaxer.Serialization.toJSONString
-            },
-            unknown : { 
-                addHeader : function () { 
+        var platforms = (function platforms() {
+            var p = {}; // Platforms object to return
+
+            // FIXME: Jaxer.request and Jaxer.response are null when Jaxer
+            // loads, preventing this from being loaded as an extension.
+            // Need to find a workaround for this. What's below is not quite 
+            // clever enough.
+            try {
+                p.jaxer = {
+                    addHeader : function addHeader(header, value) { 
+                        Jaxer.response.headers[header] = value;
+                    },
+                    userAgent : Jaxer.request.headers["User-Agent"],
+                    toJSON : function toJSON(o) {
+                        return Jaxer.Serialization.toJSONString(o, { as : "JSON" });
+                    }
+                };
+            } catch (eJaxer) {}
+
+            try {
+                p.asp = {
+                    addHeader : function addHeader(header, value) { 
+                        Response.addHeader(header, value);
+                    },
+                    userAgent : String(Request.ServerVariables("HTTP_USER_AGENT")),
+                    toJSON : Object.toJSON // This is from Prototype.js
+                };
+            } catch (eAsp) {}
+
+            p.unknown = { 
+                addHeader : function addHeader() { 
                     throw new Error("Unknown platform");
                 },
                 userAgent : "",
-                toJSON : function () { return ""; }
-            }
-        };
+                toJSON : function toJSON() { return ""; }
+            };
+
+            return p;
+        })();
 
         /** 
          * Detect the current platform here and assign it to the platform 
          * variable
          */
-        var platform = (function () {
+        var platform = (function platform() {
             if (typeof Jaxer === "object" && Jaxer.isOnServer) { 
                 return "jaxer"; 
+            } else if (Request && Response && Application && Session) {
+                // Require Prototype for ASP
+                if (typeof Object.toJSON !== "function") {
+                  throw new Error("Prototype ASP (or another implementation of Object.toJSON())is required. Get it from http://nlsmith.com/projects/prototype-asp");
+                }
+                return "asp";
             } else if (false) {
                 // TODO: other platforms
             } else { return "unknown"; }
@@ -121,13 +156,13 @@ if (typeof console === "undefined") {
          *
          * @see http://www.webtoolkit.info/javascript-sprintf.html
          */
-        var sprintf = function (args) {
+        function sprintf(args) {
             if (typeof args == "undefined") { return null; }
             if (args.length < 1) { return null; }
             if (typeof args[0] != "string") { return null; }
             if (typeof RegExp == "undefined") { return null; }
 
-            var convert = function(match, nosign){
+            function convert(match, nosign){
                 if (nosign) {
                     match.sign = '';
                 } else {
@@ -242,7 +277,7 @@ if (typeof console === "undefined") {
          * Combine the arguments to the function and run them through
          * sprintf if necessary
          */
-        var handleArgs = function (args) {
+        function handleArgs(args) {
             args = args || [];
             var argc = args.length;
             var s = []; // String to return
@@ -273,12 +308,12 @@ if (typeof console === "undefined") {
         /**
          * The function that does the work of setting the headers and formatting
          */
-        var f = function (level, args) {
+        function f(level, args) {
             if (!platform || !hasFirePHP || !enabled) { return; }
             level = level || levels.log;
             args = Array.prototype.slice.call(args);
     
-            var s = "" // The string to send to the console
+            var s = ""; // The string to send to the console
             var msg = ""; // The complete header message
             var meta = { // Metadata for object
                 Type : level
@@ -304,7 +339,7 @@ if (typeof console === "undefined") {
                     if (level === levels.group) { // Handle groups
                         meta.Label = args[0];
                     } else if (level === levels.time) { // Handle time
-                        timers[args[0]] = { start : (new Date()).getTime() }
+                        timers[args[0]] = { start : (new Date()).getTime() };
                         return;
                     } else if (level === levels.timeEnd) { // Handle time end
                         meta.Type = levels.info;
@@ -322,9 +357,9 @@ if (typeof console === "undefined") {
 
             // If the starting headers haven't been added, add them
             if (index <= 1) {
-                addHeader("X-Wf-Protocol-1", "http://meta.wildfirehq.org/Protocol/JsonStream/0.2"),
-                addHeader("X-Wf-1-Plugin-1", " http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/0.2.0")
-                addHeader("X-Wf-1-Structure-1", "http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1")
+                addHeader("X-Wf-Protocol-1", "http://meta.wildfirehq.org/Protocol/JsonStream/0.2");
+                addHeader("X-Wf-1-Plugin-1", " http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/0.2.0");
+                addHeader("X-Wf-1-Structure-1", "http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1");
             }
 
             s = toJSON(s); // JSONify string
@@ -334,7 +369,7 @@ if (typeof console === "undefined") {
             if (msg.length < maxLength) {
                 addHeader('X-Wf-1-1-1-' + index, msg.length + '|' + msg + '|');
             } else { // Split the message up if it's greater than maxLength
-                (function () {
+                (function splitMessage() {
                     var keyPrefix = 'X-Wf-1-1-1-';
                     var key = keyPrefix + index;
                     var value = "";
@@ -350,16 +385,14 @@ if (typeof console === "undefined") {
                     }
 
                     // Add a header for each part
-                    for(var i = 0; i < messages.length; i += 1) {
+                    for(i = 0; i < messages.length; i += 1) {
                         key = keyPrefix + index;
                         value = '|' + messages[i] + '|';
 
-                        if (i === 0) { value = totalLength + value; index +=1; }
+                        if (i === 0) { value = totalLength + value; }
                         if (i !== messages.length - 1) { value += "\\"; }
 
-                        // FIXME: This really messes up Jaxer, but the 
-                        // formatting looks correct
-                        // addHeader(key, value);
+                        addHeader(key, value);
                         index += 1;
                     }
                 })(); 
@@ -368,73 +401,73 @@ if (typeof console === "undefined") {
         }
 
         return {
-            log : function () {
+            log : function log() {
                 f(levels.log, arguments); 
             },
-            debug : function () {
+            debug : function debug() {
                 // log & debug do the same thing
                 f(levels.log, arguments);
             },
-            info : function () {
+            info : function info() {
                 f(levels.info, arguments);
             },
-            warn : function () {
+            warn : function warn() {
                 f(levels.warn, arguments);
             },
-            error : function () {
+            error : function error() {
                 f(levels.error, arguments);
             },
-            assert : function () {
+            assert : function assert() {
                 f(levels.warn, ["console.assert() is not implemented"]);
             },
             /**
              * dir is Firebug specific and probably will not be implemented
              */
-            dir : function () {
+            dir : function dir() {
                 f(levels.warn, ["console.dir() is not implemented"]);
             },
             /**
              * dirxml is Firebug specific and probably will not be implemented
              */
-            dirxml : function () {
+            dirxml : function dirxml() {
                 f(levels.warn, ["console.dirxml() is not implemented"]);
             },
-            trace : function () {
+            trace : function trace() {
                 f(levels.warn, ["console.trace() is not implemented"]);
             },
-            group : function () {
+            group : function group() {
                 f(levels.group, [arguments[0] || ""]);
             },
-            groupEnd : function () {
+            groupEnd : function groupEnd() {
                 f(levels.groupEnd, [""]);
             },
-            time : function () {
+            time : function time() {
                 f(levels.time, [arguments[0] || ""]);
             },
-            timeEnd : function () {
+            timeEnd : function timeEnd() {
                 f(levels.timeEnd, [arguments[0] || ""]);
             },
             /**
              * profile is Firebug specific and probably will not be implemented
              */
-            profile : function () {
+            profile : function profile() {
                 f(levels.warn, ["console.profile() is not implemented"]);
             },
             /**
              * profileEnd is Firebug specific and probably will not be 
              * implemented
              */
-            profileEnd : function () {
+            profileEnd : function profileEnd() {
                 f(levels.warn, ["console.profileEnd() is not implemented"]);
             },
-            count : function () {
+            count : function count() {
                 f(levels.warn, ["console.count() is not implemented"]);
             },
             /**
              * table shows the logged object in a tablular format. This is NOT
              * part of the Firebug console API and is specific to Wildfire
              */
-            table : function () {
+            table : function table() {
                 f(levels.warn, ["console.table() is not implemented"]);
             },
             /**
@@ -442,23 +475,31 @@ if (typeof console === "undefined") {
              * pane of the Firebug Net tab.I don't forsee implementing it at 
              * any time.
              */
-            dump : function () {
+            dump : function dump() {
                 f(levels.warn, ["console.dump() is not implemented"]);
             },
             /**
              * Enable the console 
              */
-            enable : function () {
+            enable : function enable() {
                 enabled = true;
                 f(levels.info, ["console is enabled"]);
             },
             /**
              * Disable the console
              */
-            disable : function () {
+            disable : function disable() {
                 f(levels.info, ["console is disabled"]);
                 enabled = false;
             }
         };
     })();
+
+    // Add this as a member of the Jaxer object. With this, you can drop this
+    // file into local_jaxer/extensions and Jaxer.console will be automatically
+    // available everywhere
+    // FIXME: Does not work. See platforms()
+    if (typeof Jaxer === "object" && typeof Jaxer.console === "undefined") {
+      Jaxer.console = console;
+    }
 }

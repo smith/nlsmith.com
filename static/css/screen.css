@@ -84,6 +84,8 @@ h4 {
 	font-size: 1.25em;
 }
 
+h5 { font-size: 1em; margin-bottom : 0em; }
+h6 { margin: 0em; }
 
 #header {
 	background: url('../images/header-background.jpg');
@@ -204,6 +206,8 @@ img.softpedia {
 }
 
 .downloadBox ul { padding-left: 5px; line-height: 32px; }
+
+.version { text-align: right; }
 
 /* =CONTACT FORM */
 #contact {
