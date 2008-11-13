@@ -209,6 +209,14 @@ img.softpedia {
 
 .version { text-align: right; }
 
+/* =PRETTIFY */
+.prettyprint {
+  background: #ffffff;
+  border: 1px dotted;
+  display: block;
+  margin: 0.5em 0em;
+  padding: 0em 0em 0.5em 0.5em;
+}
 /* =CONTACT FORM */
 #contact {
   position: static;

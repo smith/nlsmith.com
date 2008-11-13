@@ -3,65 +3,63 @@
 <h2>Projects</h2>
 <h3>Prototype ASP</h3>
 <div class="downloadBox">
-<img src="/static/images/prototypeasp.png" alt="" />
-<p class="version">Version 1.6.0.2</p>
-<ul>
-  <li><a href="/downloads/prototype.js">Single file</a></li>
+  <img src="/static/images/prototypeasp.png" alt="" />
+  <p class="version">Version 1.6.0.2</p>
+  <ul>
+    <li><a href="/downloads/prototype.js">Single file</a></li>
     <li><a href="/downloads/prototype.js.asp-1.6.0.2.tar.gz">Source distribution</a></li>
-    </ul>
-    </div>
-    <h3>What is this?</h3>
-    <p>Prototype ASP is an adaptation of the 
-    <a href="http://prototypejs.org">Prototype JavaScript Framework</a>.
-    It was made for use on the Microsoft &#8220;Classic&#8221; ASP platform with JScript, though it may work on other server-side JavaScript platforms.</p>
-    <h3>ASP? Nobody uses that anymore.</h3>
-    <p>No, some people still do. If you're one of those people, and you like JavaScript, this could change your life!</p>
-    <p>If you're not, and you're using something like <a href="http://www.mozilla.org/rhino/">Rhino</a> or <a href="http://dev.helma.org/">Helma</a>, you still could be in luck. Prototype ASP doesn't really depend on anything in ASP, but I would love to hear from you and fix it if it doesn't quite work for you.</p>
-    <h3>How do I use it?</h3>
-    <p>In any ASP document, do something like this:</p>
-    <pre><code>
-    &lt;% ASP %&gt;
-    &lt;script language="JavaScript" runat="server" src="/path/to/prototype.js.asp"&gt;&lt;/script&gt;
-    &lt;script language="JavaScript" runat="server"&gt;
-      Class.create({...}); // Go nuts here.
-    &lt;/script&gt;
-      </code></pre>
-      <p>You'll need a '&lt;% %&gt;' tag at the top for IIS to realize you're using ASP if your default language is set to something bad.</p>
-      <h3>How is this different from regular old Prototype?</h3>
-      <p>Most of the great stuff in Prototype centers around DOM manipulation and AJAX, which depends on a web browser. Prototype ASP strips all of that out (including the deprecated methods) and leaves the rest: classical inheritance, enumerable, string, and array manipulation, functional programming features, and more. Try that in VBScript!</p>
-      <p>The following objects, classes, and methods have been removed in Prototype ASP:</p>
-      <ul>
-        <li>$</li>
-          <li>$$</li>
-            <li>Ajax</li>
-              <li>Element</li>
-                <li>Event</li>
-                  <li>Form</li>
-                    <li>Function#delay</li>
-                      <li>Function#defer</li>
-                        <li>Insertion</li>
-                          <li>PeriodicalExecutor</li>
-                            <li>Prototype.Browser</li>
-                              <li>Prototype.BrowserFeatures</li>
-                                <li>Position</li>
-                                  <li>TimedObserver</li>
-                                  </ul>
-                                  <h3>Is there any documentation?</h3>
-                                  <p>All documentation can be found at <a href="http://prototypejs.org/api/">http://prototypejs.org/api/</a></p>
-                                  <h3>Are there any known issues?</h3>
-                                  <p>Yes:</p>
-                                  <ul>
-                                    <li><strong>String#capitalize</strong> does not seem to work on some international unicode strings on JScript.</li>
-                                      <li><strong>Hash#toQueryString</strong> does not seem to work at all. I'm not sure why. It may be something I did.</li>
-                                      </ul>
-                                      <p>Any help fixing these would be greatly appreciated.</p>
-                                      <h3>How About Tests?</h3>
-                                      <p>The tests in the /test/unit/ directory of the <a href="/downloads/prototype.js.asp-1.6.0.2.tar.gz">source distribution</a> have been adapted to work on ASP. This framework will be released as a separate project soon.</p>
-                                      <h3>Great! Can I download it already?</h3>
-                                      <p>Sure.</p>
-                                      <ul>
-                                        <li>Single file: <a href="/downloads/prototype.js">prototype.js</a></li>
-                                          <li>Source distribution: <a href="/downloads/prototype.js.asp-1.6.0.2.tar.gz">prototype.js.asp-1.6.0.2.tar.gz</a></li>
-                                          </ul>
-                                          <script runat="server" src="/site.js"></script>
-                                        </body>
+  </ul>
+</div>
+<h3>What is this?</h3>
+<p>Prototype ASP is an adaptation of the 
+<a href="http://prototypejs.org">Prototype JavaScript Framework</a>.
+It was made for use on the Microsoft &#8220;Classic&#8221; ASP platform with JScript, though it may work on other server-side JavaScript platforms.</p>
+<h3>ASP? Nobody uses that anymore.</h3>
+<p>No, some people still do. If you're one of those people, and you like JavaScript, this could change your life!</p>
+<p>If you're not, and you're using something like <a href="http://www.mozilla.org/rhino/">Rhino</a> or <a href="http://dev.helma.org/">Helma</a>, you still could be in luck. Prototype ASP doesn't really depend on anything in ASP, but I would love to hear from you and fix it if it doesn't quite work for you.</p>
+<h3>How do I use it?</h3>
+<p>In any ASP document, do something like this:</p>
+<code class="prettyprint">
+&lt;script language="JavaScript" runat="server" src="/path/to/prototype.js.asp"&gt;&lt;/script&gt;
+&lt;script language="JavaScript" runat="server"&gt;
+  Class.create({...}); // Go nuts here.
+&lt;/script&gt;
+</code>
+<h3>How is this different from regular old Prototype?</h3>
+<p>Most of the great stuff in Prototype centers around DOM manipulation and AJAX, which depends on a web browser. Prototype ASP strips all of that out (including the deprecated methods) and leaves the rest: classical inheritance, enumerable, string, and array manipulation, functional programming features, and more. Try that in VBScript!</p>
+<p>The following objects, classes, and methods have been removed in Prototype ASP:</p>
+<ul>
+  <li>$</li>
+  <li>$$</li>
+  <li>Ajax</li>
+  <li>Element</li>
+  <li>Event</li>
+  <li>Form</li>
+  <li>Function#delay</li>
+  <li>Function#defer</li>
+  <li>Insertion</li>
+  <li>PeriodicalExecutor</li>
+  <li>Prototype.Browser</li>
+  <li>Prototype.BrowserFeatures</li>
+  <li>Position</li>
+  <li>TimedObserver</li>
+</ul>
+<h3>Is there any documentation?</h3>
+<p>All documentation can be found at <a href="http://prototypejs.org/api/">http://prototypejs.org/api/</a></p>
+<h3>Are there any known issues?</h3>
+<p>Yes:</p>
+<ul>
+  <li><strong>String#capitalize</strong> does not seem to work on some international unicode strings on JScript.</li>
+  <li><strong>Hash#toQueryString</strong> does not seem to work at all. I'm not sure why. It may be something I did.</li>
+</ul>
+<p>Any help fixing these would be greatly appreciated.</p>
+<h3>How About Tests?</h3>
+<p>The tests in the /test/unit/ directory of the <a href="/downloads/prototype.js.asp-1.6.0.2.tar.gz">source distribution</a> have been adapted to work on ASP. This framework will be released as a separate project soon.</p>
+<h3>Great! Can I download it already?</h3>
+<p>Sure.</p>
+<ul>
+  <li>Single file: <a href="/downloads/prototype.js">prototype.js</a></li>
+  <li>Source distribution: <a href="/downloads/prototype.js.asp-1.6.0.2.tar.gz">prototype.js.asp-1.6.0.2.tar.gz</a></li>
+</ul>
+<script runat="server" src="/site.js"></script>
+</body>

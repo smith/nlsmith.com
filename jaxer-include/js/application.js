@@ -12,7 +12,7 @@ Jaxer.response.setClientFramework();
       (Jaxer.request.documentRoot || "/var/www/nlsmith.com/");
     var privateLibDir = documentRoot + "jaxer-include/js/";
     var path = Jaxer.request.current.path || ""; // Current path
-    var app, page, head; // Application objects
+    var app, page, head, body; // Application objects
 
     // Load external libraries or abort
     try {
@@ -42,6 +42,7 @@ Jaxer.response.setClientFramework();
     page = {};
 
     head = $$('head')[0] || {}; // Document head
+    body = $$("body")[0] || {};
 
     /**
      * Put meta tags in the document head
@@ -71,7 +72,6 @@ Jaxer.response.setClientFramework();
      * Create the page layout
      */
     (function doLayout() {
-        var body;
         var content;
         var layout = {
             root : documentRoot + "jaxer-include/html/layouts",
@@ -88,7 +88,6 @@ Jaxer.response.setClientFramework();
         
         // Put the content into the 'content' element of the layout
         if (layout.template) { 
-            body = $$("body")[0] || {};
             content = body.innerHTML || "";
             body.innerHTML = layout.template;
             if ($('content')) { $('content').innerHTML = content; }
@@ -120,6 +119,25 @@ Jaxer.response.setClientFramework();
             head.insert(title);
         }
         title.update(text); 
+    })();
+
+    /**
+     * Pretty print using prettify.js if there are any prettyprint elements
+     */
+    (function prettyPrint() {
+        if ($$(".prettyprint").length > 0) {
+            var js = "/static/js/prettify.js";
+            var css = "/static/css/prettify.css"
+            var scriptText = "window.onload = prettyPrint();";
+            var scriptTag = new Element("script").update(scriptText);
+
+            head.insert(new Element("link", {
+                href : css,
+                rel : "stylesheet"
+            }));
+            body.insert(new Element("script", { src : js }));
+            body.insert(scriptTag);
+        }
     })();
 
     // Stuff below here is page specific and probably should be handled 
