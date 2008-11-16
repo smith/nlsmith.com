@@ -204,19 +204,21 @@ img.softpedia {
   margin-top: 1em;
   padding: 0em 0em 1em 1em;
 }
-
-.downloadBox ul { padding-left: 5px; line-height: 32px; }
+.downloadBox p { margin-bottom: 0.25em; }
+.downloadBox ul { text-align: right; padding-left: 5px; list-style: none; margin-top: 0px; }
 
 .version { text-align: right; }
 
 /* =PRETTIFY */
 .prettyprint {
-  background: #ffffff;
   border: 1px dotted;
   display: block;
   margin: 0.5em 0em;
   padding: 0em 0em 0.5em 0.5em;
+  font-size: 85%;
+  font-family: Consolas, Monaco, "Courier New";
 }
+
 /* =CONTACT FORM */
 #contact {
   position: static;
