@@ -49,6 +49,8 @@ img {
 	line-height: 140%;
 }
 
+code { background-color: #E5ECE3; font-weight: bold; }
+
 /**** HEADERS ****/
 h1 {
 	 text-indent: -9999px; 
@@ -206,7 +208,7 @@ img.softpedia {
 }
 .downloadBox p { margin-bottom: 0.25em; }
 .downloadBox ul { text-align: right; padding-left: 5px; list-style: none; margin-top: 0px; }
-
+.downloadBox ul li { margin-bottom: 0.5em; }
 .version { text-align: right; }
 
 /* =PRETTIFY */
@@ -215,8 +217,9 @@ img.softpedia {
   display: block;
   margin: 0.5em 0em;
   padding: 0em 0em 0.5em 0.5em;
-  font-size: 85%;
+  font-size: 75%;
   font-family: Consolas, Monaco, "Courier New";
+  font-weight: normal;
 }
 
 /* =CONTACT FORM */
