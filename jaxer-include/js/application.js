@@ -108,7 +108,7 @@ Jaxer.response.setClientFramework();
         parts.push(($$('h2')[0] || {}).innerHTML);
         
         // Use the first 'h3' tag as the third part, except on the projects page
-        if (path !== "/projects") {
+        if (path !== "/projects/") {
             parts.push(($$('h3')[0] || {}).innerHTML);
         }
 
