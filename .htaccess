@@ -17,6 +17,8 @@ Redirect 301 /blog /projects/
 Redirect 301 /old /projects/
 
 # deny access to the top-level git repository:
-RewriteEngine On
-RewriteRule ^.git - [F,L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^.git - [F,L]
+</IfModule>
 
