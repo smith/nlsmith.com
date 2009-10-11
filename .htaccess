@@ -16,7 +16,9 @@ Redirect 301 /index.php /projects/
 Redirect 301 /blog /projects/
 Redirect 301 /old /projects/
 
-# deny access to the top-level git repository:
+# Deny access to the top-level git repository:
 RewriteEngine On
 RewriteRule ^.git - [F,L]
 
+# Redirect for college football logos
+RedirectMatch 301 /projects/college-football/logos/(\d+).png http://assets.espn.go.com/i/teamlogos/ncaa/sml/trans/$1.gif
