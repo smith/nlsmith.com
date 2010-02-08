@@ -23,4 +23,4 @@ Redirect 301 /old /projects/
 </IfModule>
 
 # Redirect for college football logos
-RedirectMatch 301 /projects/college-football/logos/(\d+).png http://assets.espn.go.com/i/teamlogos/ncaa/sml/trans/$1.gif
+#RedirectMatch 301 /projects/college-football/logos/(\d+).png http://assets.espn.go.com/i/teamlogos/ncaa/sml/trans/$1.gif

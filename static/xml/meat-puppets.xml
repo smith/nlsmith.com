@@ -1,0 +1,14 @@
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:media='http://search.yahoo.com/mrss/'>
+	<title>Meat Puppets Playlist</title>
+  <link rel='alternate' type='text/html' href='http://nlsmith.com/meat-puppets.html' />
+	<entry>
+    <title>Station</title>
+    <media:content url="/static/video/P1010578.flv" type="video/x-flv" />
+		<media:credit role="author">The Meat Puppets</media:credit>
+	</entry>
+	<entry>
+    <title>Acronym? (My memory card got full here.)</title>
+    <media:content url="/static/video/P1010580.flv" type="video/x-flv" />
+		<media:credit role="author">The Meat Puppets</media:credit>
+	</entry>
+</feed>

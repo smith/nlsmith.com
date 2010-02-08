@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>The Meat Puppets</h2>
+<script src="/static/js/swfobject.js"></script>
+<div id="player" style="margin-top: 2em;text-align: center;"></div>
+<script>
+  var so = new SWFObject('/static/flash/player.swf','mpl','360','470','9');
+  so.addParam('allowscriptaccess','always');
+  so.addParam('allowfullscreen','true');
+  so.addParam('flashvars','&file=/static/xml/meat-puppets.xml&playlist=bottom&backcolor=#E5DDD3');
+  so.write('player');
+</script>
+<script runat="server" src="/site.js"></script>
+</body>
+</html>

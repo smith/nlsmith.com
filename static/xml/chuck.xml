@@ -1,0 +1,14 @@
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:media='http://search.yahoo.com/mrss/'>
+	<title>Chuck Berry Playlist</title>
+  <link rel='alternate' type='text/html' href='http://nlsmith.com/chuck.html' />
+	<entry>
+    <title>Memphis Tennessee</title>
+    <media:content url="/static/video/P1010089.flv" type="video/x-flv" />
+		<media:credit role="author">Chuck Berry</media:credit>
+	</entry>
+	<entry>
+    <title>My Ding-A-Ling</title>
+    <media:content url="/static/video/P1010105.flv" type="video/x-flv" />
+		<media:credit role="author">Chuck Berry</media:credit>
+	</entry>
+</feed>
