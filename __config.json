@@ -1,0 +1,11 @@
+{
+  "dest-dir": "/home/smith/public_html/preview",
+  "globals" : {
+    "site": "nlsmith.com",
+    "title": "NL Smith",
+    "css": {
+      "href": "/static/css/screen.css",
+      "media": "screen"
+    }
+  }
+}
