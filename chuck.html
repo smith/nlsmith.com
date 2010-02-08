@@ -2,7 +2,7 @@
 <html>
 <body>
 <h2>Chuck Berry</h2>
-<script src="/static/js/swfobject.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <div id="player" style="margin-top: 2em;text-align: center;"></div>
 <script>
   var so = new SWFObject('/static/flash/player.swf','mpl','360','470','9');
@@ -11,6 +11,5 @@
   so.addParam('flashvars','&file=/static/xml/chuck.xml&playlist=bottom&backcolor=#E5DDD3');
   so.write('player');
 </script>
-<script runat="server" src="/site.js"></script>
 </body>
 </html>
