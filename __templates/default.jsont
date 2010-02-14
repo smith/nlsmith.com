@@ -1,3 +1,11 @@
+<!doctype html>
+<html>
+<head>
+  <title>{title} : NL Smith</title>
+  <meta http-equiv="Content-Type" name="text/html;charset=utf-8" />
+  <link rel="stylesheet" href="/static/css/screen.css" media="screen" />
+</head>
+<body>
 <div id="topMenu" class="menu">
   <ul>
     <li><a href="/projects" title="Projects">Projects</a></li>
@@ -8,7 +16,7 @@
 </div>
 <div id="header"><h1><a href="http://www.nlsmith.com/">NL Smith</a></h1></div>
 <div class="container">
-  <div id="content"></div>
+  <div id="content">{body|raw}</div>
   <div id="bottomMenu" class="menu">
     <ul>
       <li><a href="/projects" title="Projects">Projects</a></li>
@@ -31,3 +39,5 @@ _gaq.push(['_trackPageview']);
     document.documentElement.firstChild.appendChild(ga);
 })();
 </script>
+</body>
+</html>

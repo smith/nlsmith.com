@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
+---
+title: R&eacute;sum&eacute;
+---
+
+<h2>{title}</h2>
 <div id="resume">
     <h3>Nathan Lloyd Smith</h3>
     <div class="address">
@@ -86,7 +88,3 @@
     <br />
     <span class="location">Iowa City, IA</span>
 </div>
-<script runat="server" src="/site.js"></script>
-</body>
-</html>
-
