@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<body>
-<h2>Projects</h2>
+---
+title: Projects
+---
+
+<h2>{title}</h2>
 <div class="entry">
   <h3>College Football Widget</h3>
   <div class="project_date">September 26, 2005</div>
@@ -62,9 +64,3 @@
     </ul>
   </div>
 </div>
-<script>
-    edudirect_options = { base_url : "http://edudirect.nlsmith.com" };
-</script>
-<script src="http://edudirect.nlsmith.com/js/search/keywords.src.js"></script>
-<script runat="server" src="/site.js"></script>
-</body>
