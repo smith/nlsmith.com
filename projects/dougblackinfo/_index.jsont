@@ -1,10 +1,8 @@
 ---
-title: Projects
-project: dougblack.info
+section: Projects
+title: dougblack.info
 ---
 
-<h2>{title}</h2>
-<h3>{project}</h3>
 <p><a href="http://dougblack.info">dougblack.info</a>
 is the website of designer and photographer Doug Black.
 The site showcases his furniture, graphic design, and photography works,

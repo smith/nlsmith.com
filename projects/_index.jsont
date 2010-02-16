@@ -1,8 +1,8 @@
 ---
-title: Projects
+section: Projects
+title:
 ---
 
-<h2>{title}</h2>
 <div class="entry">
   <h3>College Football Widget</h3>
   <div class="project_date">September 26, 2005</div>

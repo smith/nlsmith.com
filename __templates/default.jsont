@@ -1,43 +1,36 @@
 <!doctype html>
 <html>
 <head>
-  <title>{title} : NL Smith</title>
+  <title>{.title?}{title} : {.end}{.section?}{section} : {.end}NL Smith</title>
   <meta http-equiv="Content-Type" name="text/html;charset=utf-8" />
   <link rel="stylesheet" href="/static/css/screen.css" media="screen" />
 </head>
 <body>
 <div id="topMenu" class="menu">
   <ul>
-    <li><a href="/projects" title="Projects">Projects</a></li>
-    <li><a href="/links" title="Links">Links</a></li>
-    <li><a href="/contact" title="Contact">Contact</a></li>
-    <li><a href="/vim" title="Vim">Vim</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/links">Links</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/vim">Vim</a></li>
   </ul>
 </div>
 <div id="header"><h1><a href="http://www.nlsmith.com/">NL Smith</a></h1></div>
 <div class="container">
-  <div id="content">{body|raw}</div>
+  <div id="content">
+    <h2>{section}</h2>
+    <h3>{# title}</h3>
+    {body|raw}
+  </div>
   <div id="bottomMenu" class="menu">
     <ul>
-      <li><a href="/projects" title="Projects">Projects</a></li>
-      <li><a href="/links" title="Links">Links</a></li>
-      <li><a href="/contact" title="Contact">Contact</a></li>
-      <li><a href="/vim" title="Vim">Vim</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/links">Links</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/vim">Vim</a></li>
     </ul>
   </div>
-  <div id="copyright"><p>&copy; 2004&ndash;2007 Nathan Lloyd Smith</p></div>
+  <div id="copyright"><p>&copy; 2004&ndash;2010 Nathan Lloyd Smith</p></div>
 </div>
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-1765938-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-    var ga = document.createElement('script');
-    ga.src = ('https:' == document.location.protocol ?
-        'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    ga.setAttribute('async', 'true');
-    document.documentElement.firstChild.appendChild(ga);
-})();
-</script>
+<script src="/static/js/main.js"></script>
 </body>
 </html>

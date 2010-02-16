@@ -1,8 +1,8 @@
 ---
-title: Contact
+section: Contact
+title:
 ---
 
-<h2>{title}</h2>
 <div id="contact">
   <p>Please drop me a note. Need a web page? Let me know. Comments about the site? I would enjoy reading them. Questions about anything? I&#8217;ll try and answer!</p>
     <div id="errors" class="formErrors"></div>
