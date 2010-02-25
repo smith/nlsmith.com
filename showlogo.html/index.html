@@ -20,11 +20,9 @@
 <body>
   <div id="main"><div id="logo"></div>
 </div>
-<script src="prototype.js"></script>
-<script src="swfobject.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 <script>
-//var FO = {movie: "http://espn-ak.starwave.com/swf/clubhouse/ncaa/<? echo $id; ?>.swf", build: "0", majorversion: "6", height: "50", width: "50", wmode: "transparent"}
-//UFO.create(FO, "main");
 document.observe("dom:loaded", function () {
   var id = window.location.search.toQueryParams().id || 0;
   var url = "http://espn-ak.starwave.com/swf/clubhouse/ncaa/";
