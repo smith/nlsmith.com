@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>{.title?}{title} : {.end}{.section?}{section} : {.end}NL Smith</title>
+  <title>{.section title}{@} : {.end}{.section section}{@} : {.end}NL Smith</title>
   <meta http-equiv="Content-Type" name="text/html;charset=utf-8" />
   <link rel="stylesheet" href="/static/css/screen.css" media="screen" />
 </head>
@@ -17,8 +17,12 @@
 <div id="header"><h1><a href="http://www.nlsmith.com/">NL Smith</a></h1></div>
 <div class="container">
   <div id="content">
-    <h2>{section}</h2>
-    <h3>{# title}</h3>
+    {.section section}
+    <h2>{@}</h2>
+    {.end}
+    {.section title}
+    <h3>{@}</h3>
+    {.end}
     {body|raw}
   </div>
   <div id="bottomMenu" class="menu">
