@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<body>
-<h2>Projects</h2>
-<h3>College Football Widget</h3>
+---
+section: Projects
+title: College Football Widget
+---
+
 <img src="/static/images/college-football-screenshot.png" class="screenshot" alt="CollegeFootball Screenshot" />
 <p>College football is a
 <a href="http://www.apple.com/downloads/dashboard/">Dashboard Widget</a>
@@ -94,5 +95,3 @@ Dashboard development resources</a> and example widgets.</li>
 </ul>
 <h4>Disclaimer</h4>
 <p>This software is copyright 2005 Nathan Smith. All other copyrights and trademarks are property of their respective owners.</p>
-<script runat="server" src="/site.js"></script>
-</body>

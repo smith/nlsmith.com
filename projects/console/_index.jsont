@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<body>
-<h2>Projects</h2>
-<h3>JavaScript Server-Side Console</h3>
+---
+section: Projects
+title: JavaScript Server-Side Console
+---
+
 <div class="downloadBox">
   <img src="/static/images/console.png" alt="" />
   <p class="version">Version 0.0.4</p>
@@ -118,5 +119,3 @@
   <li>The folks at <a href="http://webtoolkit.info">webtoolkit.info</a>, for their <code>sprintf</code> implementation</li>
   <li>Davey at Aptana, and the whole Aptana staff for all of their help with Jaxer and the T-shirt</li>
 </ul>
-<script runat="server" src="/site.js"></script>
-</body>
