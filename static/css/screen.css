@@ -41,7 +41,7 @@ img {
 	list-style-type: none;
 }
 	
-.container, #content {
+.container, .content {
 	width: 33em;
 	text-align: left;
 	margin: 0 auto;
