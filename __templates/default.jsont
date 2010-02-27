@@ -37,7 +37,6 @@
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.6/jquery.validate.min.js"></script>
-<script src="/static/js/prettify.js"></script>
 <script src="/static/js/main.js"></script>
 </body>
 </html>
