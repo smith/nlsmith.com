@@ -1,0 +1,48 @@
+<VirtualHost *>
+  ServerAdmin webmaster@<%= domain_name %>
+  ServerName <%= domain_name %>
+  ServerAlias www.<%= domain_name %>
+
+  DocumentRoot <%= output_dir %>
+  <Directory />
+    AllowOverride None
+  </Directory>
+
+	ServerSignature Off
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+  ErrorLog /var/log/apache2/<%= domain_name %>.error.log
+  CustomLog /var/log/apache2/<%= domain_name %>.access.log combined
+
+  # Disable ETags
+  FileETag none
+
+  # Compress and set expires headers on static content
+  <Location /static>
+    SetOutputFilter DEFLATE
+    # Don't compress images
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|swf)$ no-gzip dont-vary
+    ExpiresActive On
+    ExpiresDefault "access plus 5 years"
+  </Location>
+
+  # Redirects for legacy content
+  Redirect 301 /~amie http://cdbaby.com/cd/sassano
+  Redirect 301 /CollegeFootball.wdgt.zip /downloads/CollegeFootball.wdgt.zip
+  Redirect 301 /gottung http://gottung.net/
+  Redirect 301 /collegefootball.php /projects/college-football/
+  Redirect 301 /collegefootball /projects/college-football
+  Redirect 301 /files http://files.nlsmith.com/
+  Redirect 301 /contact.php /contact/
+  Redirect 301 /console /projects/console
+  Redirect 301 /projects/prototype-asp) /projects/prototype-asp
+  Redirect 301 /downloads/nathan_smith_resume.pdf /resume.html
+
+  # Index goes to /projects/index
+  Redirect 301 /index.html /projects/
+  Redirect 301 /index.php /projects/
+  Redirect 301 /blog /projects/
+  Redirect 301 /old /projects/
+</VirtualHost>

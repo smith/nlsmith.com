@@ -1,32 +1,47 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "nlsmith"
+set :user, "smith"
+set :domain_name, "#{application}.com"
+set :repository,  "git@github.com:#{user}/#{domain_name}.git"
+set :deploy_to, "/home/#{user}/#{application}"
+set :output_dir, "#{current_path}/__output"
+set :scm, :git
+set :deploy_via, :remote_cache
+role :web, "localhost"
 
-# If you have previously been relying upon the code to start, stop 
-# and restart your mongrel application, or if you rely on the database
-# migration code, please uncomment the lines you require below
+namespace :deploy do
+  task :default do
+    update
+    generate
+    clean
+    symlink_static
+  end
 
-# If you are deploying a rails app you probably need these:
+  task :generate do
+    recipe = "/opt/narwhal/packages/jesyll/bin/recipe"
+    run("cd #{release_path} && #{recipe}")
+  end
 
-# load 'ext/rails-database-migrations.rb'
-# load 'ext/rails-shared-directories.rb'
+  task :clean do
+    [".git*", "Capfile", "config", "TODO"].each do |f|
+      run "rm -rf #{output_dir}/#{f}"
+    end
+  end
 
-# There are also new utility libaries shipped with the core these 
-# include the following, please see individual files for more
-# documentation, or run `cap -vT` with the following lines commented
-# out to see what they make available.
+  task :symlink_static do
+    ["video"].each do |d|
+      run("ln -sf #{shared_path}/static/#{d} #{release_path}/static/#{d}")
+    end
+  end
+end
 
-# load 'ext/spinner.rb'              # Designed for use with script/spin
-# load 'ext/passenger-mod-rails.rb'  # Restart task for use with mod_rails
-# load 'ext/web-disable-enable.rb'   # Gives you web:disable and web:enable
-
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
-
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
-# see a full list by running "gem contents capistrano | grep 'scm/'"
-
-role :web, "your web-server here"
+namespace :deprec do
+  namespace application do
+    namespace :apache do
+      task :config, :roles => [:web] do
+        conf(["/etc/apache2/sites-available/#{application}.com"])
+        sudo "a2ensite #{domain_name}"
+        apache.restart
+      end
+    end
+  end
+end if defined?(CramerDev::Deprec)
