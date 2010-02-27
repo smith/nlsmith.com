@@ -17,7 +17,8 @@ namespace :deploy do
   end
 
   task :generate do
-    recipe = "/opt/narwhal/packages/jesyll/bin/recipe"
+    nh = ENV["NARWHAL_HOME"] || "/opt/narwhal"
+    recipe = "#{nh}/packages/jesyll/bin/recipe"
     run("cd #{release_path} && #{recipe}")
   end
 
@@ -38,10 +39,11 @@ namespace :deprec do
   namespace application do
     namespace :apache do
       task :config, :roles => [:web] do
+        set_local_template_dir(__FILE__)
         conf(["/etc/apache2/sites-available/#{application}.com"])
         sudo "a2ensite #{domain_name}"
-        apache.restart
       end
+      after "deprec:#{application}:apache:config", "deprec:apache:restart"
     end
   end
 end if defined?(CramerDev::Deprec)
