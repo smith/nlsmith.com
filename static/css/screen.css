@@ -1,4 +1,4 @@
-/*  
+/*
 	Panorama v1.0
 	 http://nlsmith.com/
 
@@ -223,34 +223,37 @@ img.softpedia {
 }
 
 /* =CONTACT FORM */
-#contact {
-  position: static;
-  overflow: hidden;
+form div {
+  width: 100%;
+  clear: both;
+  margin-bottom: 1em;
 }
 
-#errors {
+label.error {
   font-style: italic;
+  float: none;
 }
 
-.contactleft {
+label {
   width: 25%;
   text-align: right;
-  clear: both;
   float: left;
-  display: inline;
-  padding: 4px;
-  margin: 5px 0;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
 }
 
-.contactright {
-  width: 70%;
+input, textarea {
   text-align: left;
-  float: right;
-  display: inline;
-  padding: 4px;
-  margin: 5px 0;
+  float: left;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
 }
 
-.contacterror {
-  border: 1px solid #ff0000;
+form .submit { margin: 2em; }
+
+form .submit input {
+  float: none;
+  width: auto;
+  margin-left: 22%;
+  padding: auto;
 }

@@ -16,6 +16,9 @@ jQuery("document").ready(function ($) {
     );
 })();
 
+// Contact form validation
+$("#contact form").validate();
+
 });
 
 // Google analytics
