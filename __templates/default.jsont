@@ -8,10 +8,10 @@
 <body>
 <div id="topMenu" class="menu">
   <ul>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/links">Links</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/vim">Vim</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/contact/">Contact</a></li>
+    <li><a href="/vim/">Vim</a></li>
   </ul>
 </div>
 <div id="header"><h1><a href="http://www.nlsmith.com/">NL Smith</a></h1></div>
@@ -27,10 +27,10 @@
   </div>
   <div id="bottomMenu" class="menu">
     <ul>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/links">Links</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/vim">Vim</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/links/">Links</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/vim/">Vim</a></li>
     </ul>
   </div>
   <div id="copyright"><p>&copy; 2004&ndash;2010 Nathan Lloyd Smith</p></div>

@@ -13,9 +13,9 @@ title:
   <p>You can choose the team of your choice from the preferences.
   The data and team logos are
   downloaded from
-  <a href="http://www.espn.com">ESPN</a>.</p>
+  <a href="http://espn.go.com/">ESPN</a>.</p>
   <div class="more">
-    <p><a href="/projects/college-football"><img src="/static/images/college-football-icon.png" alt="Learn More"/></a></p>
+    <p><a href="/projects/college-football/"><img src="/static/images/college-football-icon.png" alt="Learn More"/></a></p>
     <ul>
       <li><a href="/downloads/CollegeFootball.wdgt.zip">Download CollegeFootball.wdgt.zip</a></li>
       <li><a href="/projects/college-football/">Learn More&hellip;</a></li>
@@ -25,7 +25,7 @@ title:
 <div class="entry">
   <h3>JavaScript Server-Side Console</h3>
   <div class="project_date">November 10, 2008</div>
-  <p>This script partially implements the <a href="http://getfirebug.com/console.html">Firebug Console API</a> for server-side JavaScript using the <a href="http://www.wildfirehq.org/">Wildfire</a>/<a href="http://www.firephp.org/">FirePHP</a> protocol. It currently runs on <a href="http://aptana.com/jaxer">Aptana Jaxer</a>, ASP, and <a href="http://appjet.com/">Appjet</a>, though support for other server-side JavaScript platforms is planned for future releases.</p>
+  <p>This script partially implements the <a href="http://getfirebug.com/wiki/index.php/Console_API">Firebug Console API</a> for server-side JavaScript using the <a href="http://www.wildfirehq.org/">Wildfire</a>/<a href="http://www.firephp.org/">FirePHP</a> protocol. It currently runs on <a href="http://www.jaxer.org/">Aptana Jaxer</a>, ASP, and <a href="http://appjet.com/">Appjet</a>, though support for other server-side JavaScript platforms is planned for future releases.</p>
   <div class="more">
     <p><a href="/projects/console/"><img src="/static/images/console.png" alt="Learn More" /></a>
     <ul>
@@ -39,7 +39,7 @@ title:
   <div class="project_date">June 3, 2008</div>
 
   <p>Prototype ASP is an adaptation of the
-      <a href="http://prototypejs.org">Prototype JavaScript Framework</a>.
+      <a href="http://prototypejs.org/">Prototype JavaScript Framework</a>.
           It was made for use on the Microsoft &#8220;Classic&#8221; ASP platform with JScript, though it may work on other server-side JavaScript platforms.</p>
   <div class="more">
     <p><a href="/projects/prototype-asp/"><img src="/static/images/prototypeasp-icon.png" alt="Learn More"/></a></p>
@@ -52,14 +52,14 @@ title:
 <div class="entry">
   <h3>dougblack.info</h3>
   <div class="project_date">December 4, 2005</div>
-  <p><a href="http://dougblack.info">dougblack.info</a>
+  <p><a href="http://dougblack.info/">dougblack.info</a>
   is the website of designer and photographer Doug Black.
   The site showcases his furniture, graphic design, and photography works,
   and has some info about Doug.</p>
   <div class="more">
     <p><a href="/projects/dougblackinfo/"><img src="/static/images/dougblack-icon.png" alt="Learn More"/></a></p>
     <ul>
-      <li><a href="http://dougblack.info">Visit dougblack.info</a></li>
+      <li><a href="http://dougblack.info/">Visit dougblack.info</a></li>
       <li><a href="/projects/dougblackinfo/">Learn More&hellip;</a></li>
     </ul>
   </div>

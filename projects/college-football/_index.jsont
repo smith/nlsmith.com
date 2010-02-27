@@ -12,7 +12,7 @@ which provides the current football schedule for I-A and I-AA NCAA teams.</p>
 <p>You can choose the team of your choice from the preferences. 
 The data and team logos are 
 downloaded from 
-<a href="http://www.espn.com">ESPN</a>.</p>
+<a href="http://espn.go.com/">ESPN</a>.</p>
 <!-- more -->
 <h4>Download</h4>
 <a href="/downloads/CollegeFootball.wdgt.zip">
@@ -76,7 +76,7 @@ changes their pages. So far this has not been a problem and the widget has worke
 <li>It could be prettier. And faster.</li>
 <li>Some I-AA teams do not have logos. This is true of both this widget and ESPN.com. I will manually add these gradually.</li>
 </ul>
-<p>Please <a href="/contact">contact me</a> if you have any more sugguestions, bugs, or ideas.</p>
+<p>Please <a href="/contact/">contact me</a> if you have any more sugguestions, bugs, or ideas.</p>
 <h4>Acknowledgements</h4>
 <p>This widget would not be possible without the help and inspiration of others. Here are a few:
 <p><ul>
@@ -84,14 +84,14 @@ changes their pages. So far this has not been a problem and the widget has worke
 <li>I decided to write this widget after seeing Justin Williams's 
 <a href="http://www.carpeaqua.com/archives/2005/09/10/purdue_football_dashboard_widget.php">
 Purdue Football</a> widget. It's nice, but why not work for <em>every</em> team?</li>
-<li><a href="http://www.espn.com">ESPN</a> for making schedules and logos available and for not 
+<li><a href="http://espn.go.com/">ESPN</a> for making schedules and logos available and for not 
 shutting this site down (yet).</li>
 <li><a href="http://alexedelman.net/">Alex Edelman</a>, for providing some excellent hints on
 making widget graphics.</li>
 <li>Apple, for their excellent <a href="http://developer.apple.com/macosx/dashboard.html">
 Dashboard development resources</a> and example widgets.</li>
 <li>Steve Splonskowski modified the script to adjust the time zone.</li>
-<li><a href="http://www.logoserver.com">LogoServer</a>, for making available logos for I-AA teams I've never heard of.</li>
+<li><a href="http://www.logoserver.com/">LogoServer</a>, for making available logos for I-AA teams I've never heard of.</li>
 </ul>
 <h4>Disclaimer</h4>
 <p>This software is copyright 2005 Nathan Smith. All other copyrights and trademarks are property of their respective owners.</p>
