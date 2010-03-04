@@ -40,8 +40,10 @@ namespace :deprec do
     namespace :apache do
       task :config, :roles => [:web] do
         set_local_template_dir(__FILE__)
-        conf(["/etc/apache2/sites-available/#{application}.com"])
+        conf(["/etc/apache2/sites-available/#{domain_name}",
+              "/etc/apache2/sites-available/files.#{domain_name}"])
         sudo "a2ensite #{domain_name}"
+        sudo "a2ensite files.#{domain_name}"
       end
       after "deprec:#{application}:apache:config", "deprec:apache:restart"
     end
