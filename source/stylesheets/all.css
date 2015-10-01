@@ -93,6 +93,7 @@ h6 { margin: 0em; }
 	background: url('../images/header-background.jpg');
 	background-repeat: no-repeat;
 	background-color: #7089B2;
+  display: block;
 	height: 72px;
 	border-bottom: 3px solid black;
 }
