@@ -1,0 +1,22 @@
+{
+  "name": "nlsmith.com",
+  "version": "1.0.0",
+  "description": "NL Smith website",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smith/nlsmith.com.git"
+  },
+  "author": "Nathan L Smith <nlloyds@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smith/nlsmith.com/issues"
+  },
+  "homepage": "https://github.com/smith/nlsmith.com",
+  "devDependencies": {
+    "webpack": "^1.12.2"
+  }
+}
