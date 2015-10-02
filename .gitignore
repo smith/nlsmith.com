@@ -20,3 +20,4 @@
 # Ignore JS build artifacts
 /node_modules
 /source/javascripts
+/typings

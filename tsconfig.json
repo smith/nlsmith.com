@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true
+  },
+  "files": [
+    "app/index.ts",
+    "typings/tsd.d.ts"
+  ]
+}
