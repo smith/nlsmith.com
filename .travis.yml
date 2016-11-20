@@ -1,0 +1,7 @@
+sudo: false
+language: ruby
+cache:
+  bundler: true
+  directories:
+    - build
+script: bin/middleman build

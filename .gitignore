@@ -9,15 +9,3 @@
 
 # Ignore the build directory
 /build
-
-# Ignore cache
-/.sass-cache
-/.cache
-
-# Ignore .DS_store file
-.DS_Store
-
-# Ignore JS build artifacts
-/node_modules
-/source/javascripts
-/typings
