@@ -3,5 +3,10 @@ language: ruby
 cache:
   bundler: true
   directories:
-    - build
+  - build
+env:
+  global:
+  - AWS_BUCKET=nlsmith.com
+  - AWS_DEFAULT_REGIONS=us-east-2
+  - AWS_ACCESS_KEY_ID=AKIAIFFUZ3LH37VBLV6A
 script: bin/middleman build
