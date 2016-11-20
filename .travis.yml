@@ -1,6 +1,9 @@
 sudo: false
 language: ruby
 rvm: 2.3.2
+branches:
+  only:
+  - master
 cache:
   bundler: true
   directories:
