@@ -9,3 +9,6 @@
 
 # Ignore the build directory
 /build
+
+# Terraform
+/terraform/*.tfstate*
