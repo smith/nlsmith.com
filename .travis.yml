@@ -15,4 +15,10 @@ env:
   - AWS_ACCESS_KEY_ID=AKIAIFFUZ3LH37VBLV6A
   # AWS_SECRET_ACCESS_KEY
   - secure: "GhEE6B6j9jQ9bf0c7ixBlKh3mNQ1l70T3Fwb/VsdfIOSY2kmaB4iBDA9NlljzVb+EWBfXjf9zgxBZaLMmrsnOnPBGvm5oz5SRQE32dBavwGfKG2IxcUbgrL7XGjH2pGIe0BoO3CzY9Qb6Z1S6/mZ0INkmmjdd93UD64YmEr7Xuo="
-script: bin/middleman s3_sync --build
+  # CLOUDFLARE_API_KEY
+  - secure: "cKft3OkcO+jjy9ckmu6kjJ45fiqiNlGPXay2jCsOCTQ7Jdq/8264VP4lkuHVUxhzHN7Mdy2gOhv4lce8R/cEjl8P8gr+oTTfbp7xW11BqBUXu5H8/Mh4B1tOZnAQnyylhWYicMQqLNsbGAHdllvH6D75VaemvQ+7YgYZkLN+Ed0="
+  # CLOUDFLARE_EMAIL
+  - secure: "YNmhyfaJyYykct2oPR2nxK7VkCXtttmml1KUfIHv2o6Yb3gtH3hdUUD+QjOSoRzZ11JBD+vcA0iEOHPF2MM/AyLwaVw7rCMUlOkB4pR6RtfdlFEvQefIhTYXK3ORMKt+Gugr2Yhw/yXu02pAvwRsUmeceUW3dCVn0n7yVsV7pC4="
+  # CLOUDFLARE_ZONE_ID
+  - secure: "IMVyio2oLSJjIXF6vmOEFLitwdF8ZJd6g0kB0LC5Hwo8nkYw2LHvcL8uOattacL6XSfhOcN2kfmh7+ExJLmjKNbR8iT/gmaBrPOsfKr+ENav7TspGb45++j3wUSIpIdVPjAzaE4rbowr5ocjIlB9+IoMS9YmskVBNOZ2dbQBWr0="
+script: bin/middleman s3_sync --build && bin/purge-cloudflare-cache.sh
