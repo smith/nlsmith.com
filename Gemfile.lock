@@ -159,6 +159,7 @@ DEPENDENCIES
   middleman-s3_sync
   mime-types
   pry
+  sass
 
 BUNDLED WITH
    1.13.6

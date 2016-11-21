@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "www" {
 
   website {
     index_document = "index.html"
-    error_document = "404/index.html"
+    error_document = "404.html"
   }
 
   policy = <<EOF
@@ -74,4 +74,11 @@ resource "aws_s3_bucket" "www" {
   ]
 }
 EOF
+}
+
+resource "aws_s3_bucket" "www_redirect" {
+  bucket = "www.nlsmith.com"
+  website {
+    redirect_all_requests_to = "https://nlsmith.com"
+  }
 }

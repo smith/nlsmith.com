@@ -2,8 +2,12 @@ set :css_dir, "stylesheets"
 set :js_dir, "javascripts"
 set :images_dir, "images"
 
+activate :external_pipeline,
+  name: :scss,
+  command: "bin/scss source/stylesheets/all.scss source/stylesheets/all.css",
+  source: "source/stylesheets"
+
 activate :s3_sync do |s3_sync|
-  s3_sync.after_build = true
   s3_sync.region = ENV["AWS_DEFAULT_REGION"]
 end
 

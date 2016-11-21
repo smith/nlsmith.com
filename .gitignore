@@ -12,3 +12,9 @@
 
 # Terraform
 /terraform/*.tfstate*
+
+# Sass output
+/source/stylesheets/*.css*
+
+# Sass cache
+/.sass-cache/
