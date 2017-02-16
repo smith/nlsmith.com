@@ -7,6 +7,8 @@ activate :external_pipeline,
   command: "bin/scss source/stylesheets/all.scss source/stylesheets/all.css",
   source: "source/stylesheets"
 
+redirect "office/index.html", to: "https://chef.zoom.us/j/3193390466"
+
 activate :s3_sync do |s3_sync|
   s3_sync.region = ENV["AWS_DEFAULT_REGION"]
 end
