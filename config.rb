@@ -8,6 +8,7 @@ activate :external_pipeline,
   source: "source/stylesheets"
 
 redirect "office/index.html", to: "https://chef.zoom.us/j/3193390466"
+redirect "resume/index.html", to: "https://www.dropbox.com/s/7fbkbin8zwkqwdf/resume.md?dl=0"
 
 activate :s3_sync do |s3_sync|
   s3_sync.region = ENV["AWS_DEFAULT_REGION"]
