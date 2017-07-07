@@ -7,7 +7,7 @@ activate :external_pipeline,
   command: "bin/scss source/stylesheets/all.scss source/stylesheets/all.css",
   source: "source/stylesheets"
 
-redirect "office/index.html", to: "https://chef.zoom.us/j/3193390466"
+redirect "office/index.html", to: "https://zoom.us/j/2362193845"
 redirect "resume/index.html", to: "https://www.dropbox.com/s/7fbkbin8zwkqwdf/resume.md?dl=0"
 
 activate :s3_sync do |s3_sync|
