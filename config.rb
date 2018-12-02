@@ -9,6 +9,7 @@ activate :external_pipeline,
 
 redirect "office/index.html", to: "https://zoom.us/j/2362193845"
 redirect "resume/index.html", to: "https://www.dropbox.com/s/7fbkbin8zwkqwdf/resume.md?dl=0"
+redirect 'rat-pack', to: 'https://docs.google.com/presentation/d/1i-peXuymkhkzbNdhgA0LF4Son988kGWQjc8X8STpQ8w/'
 
 activate :s3_sync do |s3_sync|
   s3_sync.region = ENV["AWS_DEFAULT_REGION"]
