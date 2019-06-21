@@ -1,3 +1,5 @@
+import "./style.css";
+
 import { CommandBar, Link, Stack, Text } from "office-ui-fabric-react";
 import React, { FunctionComponent } from "react";
 
@@ -47,7 +49,8 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => {
           </Link>
         </H1>
         <CommandBar
-          items={[
+          items={[]}
+          farItems={[
             { key: "GitHub", name: "GitHub", href: "https://github.com/smith" },
             {
               key: "Twitter",

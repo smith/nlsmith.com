@@ -1,5 +1,6 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createRedirect} = require('gatsby')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;

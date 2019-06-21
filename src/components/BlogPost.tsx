@@ -1,7 +1,6 @@
-import { DocumentCard, DocumentCardTitle } from "office-ui-fabric-react";
-import { Link, navigate } from "@reach/router";
 import React, { FunctionComponent } from "react";
 
+import { Link } from "@reach/router";
 import { Text } from "office-ui-fabric-react";
 
 export interface BlogPostProps {
@@ -18,11 +17,15 @@ export const BlogPost: FunctionComponent<BlogPostProps> = ({
   title
 }) => {
   return (
-    <article style={{ textAlign: "center" }}>
-      <Text as="h1" variant="xxLarge">
+    <article>
+      <Text
+        as="h1"
+        style={{ display: "block", textAlign: "center" }}
+        variant="xxLarge"
+      >
         {slug ? <Link to={slug}>{title}</Link> : title}
       </Text>
-      <time style={{ display: "block" }}>{date}</time>
+      <time style={{ display: "block", textAlign: "center" }}>{date}</time>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </article>
   );

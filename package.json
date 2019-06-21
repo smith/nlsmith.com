@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
+    "office-ui-fabric-core": "^10.1.0",
     "office-ui-fabric-react": "^6.187.2",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
