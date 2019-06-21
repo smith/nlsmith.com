@@ -12,7 +12,7 @@ interface LayoutProps {
   title: string;
 }
 
-const H1: React.FunctionComponent = ({ children }) => {
+export const H1: React.FunctionComponent = ({ children }) => {
   return (
     <Text as="h1" variant="xLarge">
       {children}

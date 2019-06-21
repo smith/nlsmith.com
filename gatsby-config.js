@@ -57,6 +57,12 @@ module.exports = {
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.AWS_BUCKET
+      }
+    }
   ]
 };

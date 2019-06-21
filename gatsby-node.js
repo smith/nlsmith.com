@@ -1,9 +1,37 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const { createRedirect} = require('gatsby')
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: "/office",
+    toPath: "https://zoom.us/j/2362193845",
+    permanent: true
+  });
+  createRedirect({
+    fromPath: "/resume",
+    toPath: "https://www.dropbox.com/s/7fbkbin8zwkqwdf/resume.md?dl=0",
+    permanent: true
+  });
+  createRedirect({
+    fromPath: "/rat-pack",
+    toPath:
+      "https://docs.google.com/presentation/d/1i-peXuymkhkzbNdhgA0LF4Son988kGWQjc8X8STpQ8w/",
+    permanent: true
+  });
+  createRedirect({
+    fromPath: "/recent-react",
+    toPath:
+      "https://docs.google.com/presentation/d/1pLWOnbZ8EntHfKU2tmg3Q-yzDKacE6uPdj1rpYSMz5I/",
+    permanent: true
+  });
+  createRedirect({
+    fromPath: "/recent-react-2",
+    toPath:
+      "https://docs.google.com/presentation/d/1Th5xTcujr7_9xOIOfebt0Akz3F-YYYsZ_dEhIXpuQPc/",
+    permanent: true
+  });
 
   const blogPost = path.resolve(`./src/templates/BlogPost.tsx`);
   return graphql(

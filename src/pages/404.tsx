@@ -1,9 +1,8 @@
+import Layout, { H1 } from "../components/Layout";
+import { Link, graphql } from "gatsby";
 import React, { FunctionComponent } from "react";
 
-import Layout from "../components/Layout";
-import { Location } from "history";
 import SEO from "../components/SEO";
-import { graphql } from "gatsby";
 
 interface NotFoundPageProps {
   data: any;
@@ -16,9 +15,12 @@ export const NotFoundPage: FunctionComponent<NotFoundPageProps> = ({
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <SEO title="Not Found" />
+      <H1>Not Found</H1>
+      <p>
+        The page you are looking for does not exist. <Link to="/">Go Home</Link>
+        .
+      </p>
     </Layout>
   );
 };
