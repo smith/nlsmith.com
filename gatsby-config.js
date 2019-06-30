@@ -61,7 +61,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: process.env.AWS_BUCKET
+        bucketName: process.env.AWS_BUCKET || "test",
+        generateRedirectObjectsForPermanentRedirects: true,
+        generateRoutingRules: false
       }
     }
   ]
