@@ -16,6 +16,7 @@ export const BlogPost: FunctionComponent<BlogPostProps> = ({
   slug,
   title
 }) => {
+  console.log({ content }, typeof content);
   return (
     <article>
       <Text

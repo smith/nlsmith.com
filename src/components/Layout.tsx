@@ -69,7 +69,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => {
       <main>
         <Stack horizontalAlign="center">{children}</Stack>
       </main>
-      <footer style={{ bottom: 0, position: "fixed", width: "100%" }}>
+      <footer style={{ bottom: 0, width: "100%" }}>
         <P>© 2004 – {new Date().getFullYear()} Nathan Lloyd Smith</P>
       </footer>
     </Customizer>
