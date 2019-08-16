@@ -41,7 +41,6 @@ export const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet
-      bodyAttributes={{ class: "ms-Fabric" }}
       htmlAttributes={{
         lang
       }}

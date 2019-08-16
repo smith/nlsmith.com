@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 
 import { Link } from "@reach/router";
-import { Text } from "office-ui-fabric-react";
 
 export interface BlogPostProps {
   date: string;
@@ -19,13 +18,7 @@ export const BlogPost: FunctionComponent<BlogPostProps> = ({
   console.log({ content }, typeof content);
   return (
     <article>
-      <Text
-        as="h1"
-        style={{ display: "block", textAlign: "center" }}
-        variant="xxLarge"
-      >
-        {slug ? <Link to={slug}>{title}</Link> : title}
-      </Text>
+      <h1>{slug ? <Link to={slug}>{title}</Link> : title}</h1>
       <time style={{ display: "block", textAlign: "center" }}>{date}</time>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </article>

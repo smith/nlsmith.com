@@ -1,7 +1,7 @@
-import Layout, { H1 } from "../components/Layout";
 import { Link, graphql } from "gatsby";
 import React, { FunctionComponent } from "react";
 
+import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 interface NotFoundPageProps {
@@ -16,7 +16,7 @@ export const NotFoundPage: FunctionComponent<NotFoundPageProps> = ({
   return (
     <Layout title={siteTitle}>
       <SEO title="Not Found" />
-      <H1>Not Found</H1>
+      <h1>Not Found</h1>
       <p>
         The page you are looking for does not exist. <Link to="/">Go Home</Link>
         .
