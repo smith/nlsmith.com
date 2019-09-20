@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/nlsmith
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nlsmith.com
+  * I am nlsmith (https://keybase.io/nlsmith) on keybase.
+  * I have a public key with fingerprint 1D7D E99D 424F 651D 7C30  D888 ADE3 ABB3 5452 1F41
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017cbcd9b061f7415ca96c2ec1c1ab81c2013d1d64312018a253a7ff303efd05b00a",
+      "fingerprint": "1d7de99d424f651d7c30d888ade3abb354521f41",
+      "host": "keybase.io",
+      "key_id": "ade3abb354521f41",
+      "kid": "01017cbcd9b061f7415ca96c2ec1c1ab81c2013d1d64312018a253a7ff303efd05b00a",
+      "uid": "af6d94f839f93c94a0b066a1a1aa1919",
+      "username": "nlsmith"
+    },
+    "service": {
+      "hostname": "nlsmith.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1569010307,
+  "expire_in": 157680000,
+  "prev": "de8162131c932ef47e96885d5207b132468a70a69a584255c6ebec50f2fc9cfc",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMIiAnicrVJZSFVBGL5XW7hq0IP0ECR1Wq2rnDn73PZ6iSKS6EaEdZ0zM8d7Ss+5
+3XO8aeZu+yZtJlZIBoESgU9K+6KQQUXaYgSVbRBZJvRilM1peQh6bOZh5v/n+77/
++3/m1rhkX4p/S/F5f/nTKS/9d64fK/Jt2CHUlHK6TUq4UCm3mf48aAGhjhvZbBIu
+xPGAByrWMYE6rwBDlYCMEVSwQDHAAOkawAIPRAKIIomAXTUkyCJSDUPkRWoQXtZ5
+HnFBzjCtfBqPxU3LZbKAqIRCSCRBMhSZRVjkiaZpiFAR6booS7IADAkwYtR2PAYz
+pyOHZps2y7Eg8tPeP/D/2XfRrzqGQqBkaCI0oIihhHgmqyDANgIQQA/o0LiFCilD
+WwVOoelGubIgx5IJE1Nvrl4jfwOysV3ImLG47drYLmAPUdeNOSGP6JbEPORWqkd+
+a0R00yJsioyRoHHHtC0uBBgSu6YnCmQFsq5FXg1ytDhmxmnE9BCyqmg8W14dmmCS
+hGpAEYAIMBQFakgqhYqmyUQWeFUHoiApGlJ5pEAka5Igy1ihOsUybwgGhtjAnNfV
+FsvmQhKzifKZpGPmW8gtilOu7Ma13FE+f4pvzOgk73f5UgLj//y57j1jR3IW19Wn
+jZ1Bt500wJATUL7f/Hy3KjOjbor8Ibw3ddnKrumnaptmNsY6lxwdmJrZ+Jz/1upv
+n413K22V24eX1s/tn/Rw9bk3WZvqll9JD8Dq/pK1G+eVmbt6Xxy6MPI2/1X7zuOl
+zsUF5Tlnl+aVn8mbeOL2p6snhkq2mydbomRaQKluaEtNOrjwfg6ckBI0w12P2smT
+i+ty0y+FI6t6s25NTjt2+lPXvgCtpWsfNfQ0585OSOHMlv0ZaeNDA+++3uuLHn4/
+rm/ekflrjvQEhp+1rrhc1dFRUT7SnDNVClXMnJPcVHOjtPJBeNAetD7O6m/tqnnc
+3fclkd6wqKjz9eoD60cN/ADAX0Ay
+=7ncP
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nlsmith
+
+==================================================================
