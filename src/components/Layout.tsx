@@ -5,7 +5,6 @@ import React, { FunctionComponent } from "react";
 import CommandBar from "./CommandBar";
 import { Link } from "gatsby";
 import SEO from "./SEO";
-import { Stack } from "office-ui-fabric-react";
 import styled from "styled-components";
 
 interface LayoutProps {
@@ -23,6 +22,22 @@ const H1 = styled("h1")`
   }
 `;
 
+const Header = styled("header")`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Main = styled("main")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > div {
+    align-self: center;
+    width: 33rem;
+  }
+`;
+
 const Footer = styled("footer")`
   display: block;
   margin-top: 2em;
@@ -33,7 +48,7 @@ const Footer = styled("footer")`
 export const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => (
   <>
     <SEO title={title} />
-    <Stack horizontal={true} as="header" horizontalAlign={"space-between"}>
+    <Header>
       <H1>
         <Link to="/">{title}</Link>
       </H1>
@@ -51,10 +66,10 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children, title }) => (
           <a href="mailto:smith@nlsmith.com">Contact</a>
         </li>
       </CommandBar>
-    </Stack>
-    <Stack as="main" horizontalAlign="center">
-      {children}
-    </Stack>
+    </Header>
+    <Main>
+      <div>{children}</div>
+    </Main>
     <Footer>© 2004 – {new Date().getFullYear()} Nathan Lloyd Smith</Footer>
   </>
 );

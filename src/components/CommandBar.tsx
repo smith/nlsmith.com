@@ -2,6 +2,10 @@ import React, { FunctionComponent } from "react";
 
 import styled from "styled-components";
 
+const Nav = styled("nav")`
+  text-align: center;
+`;
+
 const UL = styled("ul")`
   display: inline;
   list-style: none;
@@ -11,17 +15,12 @@ const UL = styled("ul")`
     display: inline;
     margin-right: 1em;
   }
-
-  li a {
-    color: inherit;
-    text-decoration: none;
-  }
 `;
 
 export const CommandBar: FunctionComponent = ({ children }) => (
-  <nav>
+  <Nav>
     <UL>{children}</UL>
-  </nav>
+  </Nav>
 );
 
 export default CommandBar;
