@@ -1,47 +1,37 @@
-import {
-  CommandBar,
-  CommandBarButton,
-  IButtonProps,
-  Text
-} from "office-ui-fabric-react";
+import { Link, graphql } from "gatsby";
 import React, { FunctionComponent } from "react";
 
 import BlogPost from "../components/BlogPost";
+import CommandBar from "../components/CommandBar";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { graphql } from "gatsby";
-import { navigate } from "@reach/router";
 
 interface NavProps {
   next?: any;
   previous?: any;
 }
 
-const Nav: React.FunctionComponent<NavProps> = ({ next, previous }) => {
-  const customButton = (props: { to: string } & IButtonProps) => {
-    const handleClick = () => navigate(props.to);
-    return <CommandBarButton {...props} onClick={handleClick} />;
-  };
-
-  const items = [
-    {
-      disabled: !previous,
-      key: "previous",
-      name: previous ? `← ${previous.frontmatter.title}` : "← Previous",
-      rel: "prev",
-      to: previous && previous.fields.slug
-    },
-    {
-      disabled: !next,
-      key: "next",
-      name: next ? `${next.frontmatter.title} →` : "Next →",
-      rel: "next",
-      to: next && next.fields.slug
-    }
-  ];
-
-  return <CommandBar buttonAs={customButton} items={items} />;
-};
+const Nav: React.FunctionComponent<NavProps> = ({ next, previous }) => (
+  <CommandBar>
+    <>
+      {previous && (
+        <li>
+          <Link rel="prev" to={previous && previous.fields.slug}>
+            ← {previous.frontmatter.title}
+          </Link>
+        </li>
+      )}
+      {next && (
+        <li>
+          <Link rel="next" to={next && next.fields.slug}>
+            {next.frontmatter.title} →
+          </Link>
+        </li>
+      )}
+      <li />
+    </>
+  </CommandBar>
+);
 
 interface BlogPostTemplateProps {
   data: any;

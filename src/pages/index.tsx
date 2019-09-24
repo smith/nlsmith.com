@@ -4,7 +4,6 @@ import React, { FunctionComponent } from "react";
 import BlogPost from "../components/BlogPost";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Stack } from "office-ui-fabric-react";
 
 interface BlogIndexProps {
   data: any;
@@ -17,7 +16,7 @@ export const BlogIndex: FunctionComponent<BlogIndexProps> = ({ data }) => {
   return (
     <Layout title={siteTitle}>
       <SEO title="All posts" />
-      <Stack tokens={{ childrenGap: "m" }}>
+      <div>
         {posts.map(({ node }) => {
           const props = {
             date: node.frontmatter.date,
@@ -27,12 +26,12 @@ export const BlogIndex: FunctionComponent<BlogIndexProps> = ({ data }) => {
           };
 
           return (
-            <Stack.Item key={node.fields.slug}>
+            <div key={node.fields.slug}>
               <BlogPost {...props} />
-            </Stack.Item>
+            </div>
           );
         })}
-      </Stack>
+      </div>
     </Layout>
   );
 };
