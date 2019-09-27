@@ -18,7 +18,7 @@ export const BlogPost: FunctionComponent<BlogPostProps> = ({
   console.log({ content }, typeof content);
   return (
     <article>
-      <h1>{slug ? <Link to={slug}>{title}</Link> : title}</h1>
+      <h2>{slug ? <Link to={slug}>{title}</Link> : title}</h2>
       <time style={{ display: "block", textAlign: "center" }}>{date}</time>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </article>
