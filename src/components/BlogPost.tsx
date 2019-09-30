@@ -15,7 +15,6 @@ export const BlogPost: FunctionComponent<BlogPostProps> = ({
   slug,
   title
 }) => {
-  console.log({ content }, typeof content);
   return (
     <article>
       <h2>{slug ? <Link to={slug}>{title}</Link> : title}</h2>

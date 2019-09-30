@@ -20,11 +20,15 @@ const H1 = styled("h1")`
     color: inherit;
     text-decoration: none;
   }
+
+  @media screen and (max-width: 33rem) {
+    font-size: 100%;
+  }
 `;
 
 const Header = styled("header")`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const Main = styled("main")`
@@ -35,6 +39,10 @@ const Main = styled("main")`
   > div {
     align-self: center;
     width: 33rem;
+
+    @media screen and (max-width: 33rem) {
+      width: 90%;
+    }
   }
 `;
 
