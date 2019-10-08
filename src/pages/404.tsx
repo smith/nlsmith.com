@@ -16,7 +16,7 @@ export const NotFoundPage: FunctionComponent<NotFoundPageProps> = ({
   return (
     <Layout title={siteTitle}>
       <SEO title="Not Found" />
-      <h1>Not Found</h1>
+      <h2>Not Found</h2>
       <p>
         The page you are looking for does not exist. <Link to="/">Go Home</Link>
         .

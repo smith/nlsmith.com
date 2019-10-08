@@ -29,3 +29,18 @@ h3 {
 li {
   margin-bottom: 0.25rem;
 }
+
+pre[class*="language-"] {
+  font-size: 12px;
+}
+
+:not(pre) > code[class*="language-"] {
+  font-size: 14px;
+  background-color: rgb(52, 55, 65, 0.1);
+  color: rgb(52, 55, 65);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  padding: 0.25rem;
+  text-shadow: none;
+}
