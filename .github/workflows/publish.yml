@@ -2,16 +2,17 @@ name: Publish
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Build and deploy
-      run: |
-        npm run build
-        npm run deploy
-        bin/purge-cloudflare-cache.sh
+      - uses: actions/checkout@v1
+      - name: Build and deploy
+        run: |
+          npm ci
+          npm run build
+          npm run deploy
+          bin/purge-cloudflare-cache.sh
