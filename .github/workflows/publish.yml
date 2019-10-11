@@ -10,14 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/upload-artifact@master
-        with:
-          name: node_modules
-          path: node_modules
-      - uses: actions/upload-artifact@master
-        with:
-          name: cache
-          path: .cache
       - name: Build and deploy
         run: |
           npm ci
@@ -32,3 +24,11 @@ jobs:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
           CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+      - uses: actions/upload-artifact@master
+        with:
+          name: node_modules
+          path: node_modules
+      - uses: actions/upload-artifact@master
+        with:
+          name: cache
+          path: .cache
