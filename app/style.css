@@ -1,0 +1,97 @@
+body {
+  background-color: rgb(245, 247, 250);
+  color: rgb(52, 55, 65);
+  font-family: Georgia, serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  border-bottom: 1px solid rgb(52, 55, 65, 0.15);
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+pre[class*="language-"] {
+  font-size: 12px;
+}
+
+:not(pre) > code[class*="language-"] {
+  font-size: 14px;
+  background-color: rgb(52, 55, 65, 0.1);
+  color: rgb(52, 55, 65);
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  padding: 0.25rem;
+  text-shadow: none;
+}
+
+h1 {
+  display: inline;
+  font-weight: inherit;
+  margin: 0;
+
+  @media screen and (max-width: 33rem) {
+    font-size: 100%;
+  }
+}
+
+h1 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main > div {
+  align-self: center;
+  width: 33rem;
+
+  @media screen and (max-width: 33rem) {
+    width: 90%;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header > nav {
+  text-align: center;
+}
+
+nav.commandBar > ul > li {
+  display: inline;
+  margin-right: 1em;
+}
+
+footer {
+  display: block;
+  margin-top: 2em;
+  text-align: center;
+  width: 100%;
+}

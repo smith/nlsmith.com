@@ -1,15 +1,22 @@
+import type { MetaFunction } from "remix";
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
-import type { MetaFunction } from "remix";
+import { Layout } from "./layout";
+import styles from "./style.css";
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "NL Smith" };
+};
+
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: styles }];
 };
 
 export default function App() {
@@ -22,7 +29,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Layout>
+          <Outlet />
+        </Layout>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}

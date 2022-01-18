@@ -1,6 +1,7 @@
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "remix";
 import type { EntryContext } from "remix";
+import { handleRedirects } from "./handle_redirects";
 
 export default function handleRequest(
   request: Request,
@@ -8,6 +9,12 @@ export default function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
+  const redirect = handleRedirects(request);
+
+  if (redirect) {
+    return redirect;
+  }
+
   const markup = renderToString(
     <RemixServer context={remixContext} url={request.url} />
   );
@@ -16,6 +23,6 @@ export default function handleRequest(
 
   return new Response("<!DOCTYPE html>" + markup, {
     status: responseStatusCode,
-    headers: responseHeaders
+    headers: responseHeaders,
   });
 }
